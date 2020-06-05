@@ -9,8 +9,6 @@ from centroid_tracker import CentroidTracker
 from sort import Sort
 
 
-# from detector import GroundTruthDetections
-
 def main(args):
     # Read video
     frames, fps = read_video(args.video_path)
@@ -62,9 +60,9 @@ def parse_args():
     """Parse input arguments."""
     parser = argparse.ArgumentParser(description='Object tracking')
     parser.add_argument('--method', default='centroid', help='Which method to use', choices=["centroid", "kalman"])
-    parser.add_argument('--video_path', default='MOT16-11-raw.webm', help='Path to the input video')
-    parser.add_argument('--bbox_path', default='MOT16-11-bb', help='Path to the bboxes of each video frame')
-    parser.add_argument('--save_path', default='MOT16-11-raw-output.avi', help='Path for saving annotated video')
+    parser.add_argument('--video_path', help='Path to the input video')
+    parser.add_argument('--bbox_path', default='bboxes', help='Path to the bboxes of each video frame')
+    parser.add_argument('--save_path', default='result.avi', help='Path for saving annotated video')
 
     args = parser.parse_args()
     return args

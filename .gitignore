@@ -4,3 +4,5 @@
 *.avi
 __pycache__/*
 .idea/*
+*.npy
+*.pyc

@@ -5,8 +5,6 @@ import numpy as np
 import cv2
 from PIL import Image, ImageDraw, ImageFont
 
-RED = (255, 0, 0)
-
 
 def read_video(filepath):
     frames = []
@@ -37,21 +35,21 @@ def annotate_frames(frames, object_boxes_per_frame, cenroid_ids_per_frame):
     return new_frames
 
 
-def write_on_frame(frame, boxes, centroid_ids):
+def write_on_frame(frame, boxes, centroid_ids, color=(255, 0, 0)):
     img = Image.fromarray(frame)
     draw = ImageDraw.Draw(img)
 
     for box in boxes:
         rect = [box['x1'], box['y1'], box['x2'], box['y2']]
-        draw.rectangle(xy=rect, outline=RED)
+        draw.rectangle(xy=rect, outline=color)
 
     font = ImageFont.truetype("Montserrat-Bold.otf", 30)
     if type(centroid_ids) == OrderedDict:
         for (objectID, centroid) in centroid_ids.items():
-            draw.text(centroid, text=f"{objectID}", font=font, fill=RED)
+            draw.text(centroid, text=f"{objectID}", font=font, fill=color)
     elif type(centroid_ids) == list:
         for (centroid, objectID) in centroid_ids:
-            draw.text(centroid, text=f"{objectID}", font=font, fill=RED)
+            draw.text(centroid, text=f"{objectID}", font=font, fill=color)
 
     return np.array(img)
 
