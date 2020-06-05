@@ -133,6 +133,10 @@ def main(args):
 
         image = frames[frame_number]
         bboxes = object_boxes_per_frame[frame_number]
+        if not bboxes:
+            centroid_ids_per_frame.append([])
+            continue
+
         features = build_features(image, bboxes, model)
 
         if frame_number == 0:  # Form gallery at the first frame

@@ -93,8 +93,10 @@ def main(args):
         filename = f"bboxes/{video_name.split('/')[-1]}_frame_{frame_number}"
 
         if detections is None:
-            np.save(filename, np.array([], dtype='float32'))
-            break
+            with open(f"{filename}.json", 'w') as f:
+                json.dump({'children': []}, f)
+            frame_number += 1
+            continue
 
         # Taking only needed predictions
         detections = detections[detections[:, -1] == 0]  # Pedestrian class
