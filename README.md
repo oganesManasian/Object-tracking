@@ -1,5 +1,6 @@
-# Object-tracking
-Object tracking with centroid tracking algorithm, kalman filter tracker and person re-identification model.
+# Person Detection and Tracking On a Video
+
+For object detection we used YOLOv3, which we had already trained on EuroCity Persons (ECP) Dataset. For object tracking, however, three different approaches have been tested, namely centroid tracking algorithm, kalman filter tracker and person re-identification model.
 
 To see the results of each model for the three given videos refer to this [link](https://drive.google.com/open?id=1d-IUrzjbMIyvn1Ah_lp6yvNy_AWPYnEC).
 
