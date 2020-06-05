@@ -9,6 +9,7 @@ We have used Google Colab for running the codes in order to avoid package depend
 
 ## Requirements:
 * torch
+* numpy
 * filterpy
 * numba
 
