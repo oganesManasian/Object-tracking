@@ -6,11 +6,12 @@ To see the results of each model for the three given videos refer to this [link]
 Our model weights can be found here [link](https://drive.google.com/open?id=1LU9k_kdO5ahfW_Xh-ULH6IkU4a69oik-).
 
 ## Requirements:
+* torch
 * filterpy
 * numba
 
 ## Run
-To do person detection on the video run from the project's folder:
+### To do person detection on the video run from the project's folder:
 ```bash
 python get_bboxes.py
 ```
@@ -33,7 +34,7 @@ Use mandatory argument
 with PATH to define path to the YoloV3 model config.
 
 
-To do object tracking on video with centroid or kalman methods run from the project's folder:
+### To do object tracking on video with centroid or kalman methods run from the project's folder:
 
 ```bash
 python main.py
@@ -62,7 +63,7 @@ Use mandatory argument
 ```
 with PATH to define path for saving annotated video.
 
-To do object tracking on video with reid neural network methods run from the project's folder:
+### To do object tracking on video with reid neural network methods run from the project's folder:
 
 ```bash
 python get_ids.py
