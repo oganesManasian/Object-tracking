@@ -5,6 +5,8 @@ For object detection we used YOLOv3, which we had already trained on EuroCity Pe
 To see the results of each model for the three given videos refer to this [link](https://drive.google.com/open?id=1d-IUrzjbMIyvn1Ah_lp6yvNy_AWPYnEC).
 Our model weights can be found here [link](https://drive.google.com/open?id=1LU9k_kdO5ahfW_Xh-ULH6IkU4a69oik-).
 
+We have used Google Colab for running the codes in order to avoid package dependency conflicts. 
+
 ## Requirements:
 * torch
 * filterpy
