@@ -2,3 +2,5 @@
 *.json
 *.webm
 *.avi
+__pycache__/*
+.idea/*

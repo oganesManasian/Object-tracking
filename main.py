@@ -19,7 +19,6 @@ def main(args):
     # Read bboxes of each frame
     json_files = sorted(os.listdir(args.bbox_path), key=lambda x: int(x.split(".")[0]))
     object_boxes_per_frame = []
-    object_centers_per_frame = []
 
     for file in json_files:
         with open(os.path.join(args.bbox_path, file)) as f:

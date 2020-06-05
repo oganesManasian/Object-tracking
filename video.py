@@ -37,7 +37,7 @@ def annotate_frames(frames, object_boxes_per_frame, cenroid_ids_per_frame):
     return new_frames
 
 
-def write_on_frame(frame, boxes, cenroid_ids):
+def write_on_frame(frame, boxes, centroid_ids):
     img = Image.fromarray(frame)
     draw = ImageDraw.Draw(img)
 
@@ -46,11 +46,11 @@ def write_on_frame(frame, boxes, cenroid_ids):
         draw.rectangle(xy=rect, outline=RED)
 
     font = ImageFont.truetype("Montserrat-Bold.otf", 30)
-    if type(cenroid_ids) == OrderedDict:
-        for (objectID, centroid) in cenroid_ids.items():
+    if type(centroid_ids) == OrderedDict:
+        for (objectID, centroid) in centroid_ids.items():
             draw.text(centroid, text=f"{objectID}", font=font, fill=RED)
-    elif type(cenroid_ids) == list:
-        for (centroid, objectID) in cenroid_ids:
+    elif type(centroid_ids) == list:
+        for (centroid, objectID) in centroid_ids:
             draw.text(centroid, text=f"{objectID}", font=font, fill=RED)
 
     return np.array(img)
